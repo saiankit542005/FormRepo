@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Feedback Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .feedback-form {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 700px;
+      width: 100%;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #444;
+      font-weight: 500;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #2a5298;
+      box-shadow: 0 0 6px rgba(42, 82, 152, 0.4);
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    .rating {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      font-size: 25px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .rating input:checked ~ label,
+    .rating label:hover,
+    .rating label:hover ~ label {
+      color: gold;
+    }
+
+    .checkbox-group,
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      font-weight: 400;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.02);
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <form class="feedback-form">
+    <h2>Company Feedback Form</h2>
+
+    <!-- Question 1 -->
+    <div class="form-group">
+      <label for="name">1. Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required />
+    </div>
+
+    <!-- Question 2 -->
+    <div class="form-group">
+      <label for="email">2. Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" required />
+    </div>
+
+    <!-- Question 3 -->
+    <div class="form-group">
+      <label for="department">3. Department</label>
+      <select id="department" required>
+        <option value="">Select department</option>
+        <option>Sales</option>
+        <option>Marketing</option>
+        <option>Support</option>
+        <option>Development</option>
+        <option>HR</option>
+      </select>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="form-group">
+      <label>4. How satisfied are you with the company environment?</label>
+      <div class="rating">
+        <input type="radio" id="env5" name="env" /><label for="env5">★</label>
+        <input type="radio" id="env4" name="env" /><label for="env4">★</label>
+        <input type="radio" id="env3" name="env" /><label for="env3">★</label>
+        <input type="radio" id="env2" name="env" /><label for="env2">★</label>
+        <input type="radio" id="env1" name="env" /><label for="env1">★</label>
+      </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="form-group">
+      <label>5. Rate your satisfaction with management support.</label>
+      <select>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Average</option>
+        <option>Poor</option>
+      </select>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="form-group">
+      <label>6. What do you like most about the company?</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> Work Culture</label>
+        <label><input type="checkbox" /> Salary & Benefits</label>
+        <label><input type="checkbox" /> Learning Opportunities</label>
+        <label><input type="checkbox" /> Team Support</label>
+        <label><input type="checkbox" /> Management</label>
+      </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="form-group">
+      <label>7. Do you feel your opinions are valued by management?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="opinions" /> Yes</label>
+        <label><input type="radio" name="opinions" /> No</label>
+        <label><input type="radio" name="opinions" /> Sometimes</label>
+      </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="form-group">
+      <label>8. How would you rate your work-life balance?</label>
+      <select>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Fair</option>
+        <option>Poor</option>
+      </select>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="form-group">
+      <label>9. What improvements would you suggest?</label>
+      <textarea placeholder="Share your suggestions here..."></textarea>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="form-group">
+      <label>10. Would you recommend this company to others?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="recommend" /> Definitely</label>
+        <label><input type="radio" name="recommend" /> Maybe</label>
+        <label><input type="radio" name="recommend" /> No</label>
+      </div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="form-group">
+      <label>11. Overall satisfaction rating</label>
+      <div class="rating">
+        <input type="radio" id="sat5" name="sat" /><label for="sat5">★</label>
+        <input type="radio" id="sat4" name="sat" /><label for="sat4">★</label>
+        <input type="radio" id="sat3" name="sat" /><label for="sat3">★</label>
+        <input type="radio" id="sat2" name="sat" /><label for="sat2">★</label>
+        <input type="radio" id="sat1" name="sat" /><label for="sat1">★</label>
+      </div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="form-group">
+      <label>12. Any additional comments?</label>
+      <textarea placeholder="Write your comments..."></textarea>
+    </div>
+
+    <button type="submit" class="btn">Submit Feedback</button>
+  </form>
+</body>
+</html>
